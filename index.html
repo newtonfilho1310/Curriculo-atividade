@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Currículo profissional de Newton Pinto Filho: objetivo, experiência, formação, habilidades e contato.">
+    <title>Newton Pinto Filho | Currículo</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --background: #0b1011;
+            --panel: #11191b;
+            --text: #e6ece9;
+            --muted: #a6b7b1;
+            --accent: #96e8b5;
+            --line: #2c3d37;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family: Consolas, "Cascadia Code", "Liberation Mono", monospace;
+            font-size: 15px;
+            line-height: 1.75;
+        }
+        a { color: var(--accent); text-underline-offset: 5px; }
+        a:hover { color: #fff; }
+        a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+        .skip-link { position: absolute; top: -100px; left: 1rem; }
+        .skip-link:focus { top: 1rem; background: var(--panel); padding: 1rem; z-index: 2; }
+        .terminal {
+            width: min(1080px, calc(100% - 64px));
+            margin: 48px auto;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--panel);
+            box-shadow: 0 24px 80px #0005;
+        }
+        .window-bar {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 13px 24px;
+            border-bottom: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 12px;
+            background: #182121;
+        }
+        .window-dots { display: flex; gap: 7px; }
+        .window-dots span { width: 9px; height: 9px; border-radius: 50%; background: #638376; }
+        .window-dots span:nth-child(2) { background: #8c9b74; }
+        .window-dots span:nth-child(3) { background: var(--accent); }
+        .file-type { margin-left: auto; }
+        .hero {
+            padding: 48px;
+            background: linear-gradient(120deg, #1e3d31 0%, #162622 48%, #11191b 100%);
+            border-bottom: 1px solid var(--line);
+        }
+        .eyebrow, .command { color: var(--accent); font-size: 12px; letter-spacing: .06em; }
+        .eyebrow { margin: 0 0 24px; text-transform: uppercase; letter-spacing: .16em; }
+        .hero-content { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+        h1 { margin: 0 0 12px; max-width: 650px; font-size: clamp(30px, 4.4vw, 48px); line-height: 1.2; letter-spacing: -.055em; }
+        .subtitle { margin: 0; color: #c5d5cd; }
+        .location { color: var(--muted); font-size: 13px; margin: 16px 0 0; }
+        .portrait {
+            width: 224px;
+            height: 272px;
+            flex-shrink: 0;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            box-shadow: 0 0 0 6px #96e8b510, 0 12px 32px #0005;
+        }
+        nav { margin-top: 32px; }
+        nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; }
+        nav a { display: block; padding: 7px 13px; border: 1px solid #4d6b5d; border-radius: 4px; text-decoration: none; font-size: 12px; }
+        nav a:hover { background: #284336; }
+        nav .contact-link { background: var(--accent); color: #10251a; border-color: var(--accent); }
+        nav .contact-link:hover { background: #b7f3cd; color: #10251a; }
+        main { padding: 0 48px; }
+        section { padding: 32px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 20px; }
+        .command { margin: 0 0 6px; }
+        h2 { font-size: 20px; letter-spacing: -.035em; margin: 0 0 20px; line-height: 1.4; }
+        h3 { margin: 0 0 6px; font-size: 15px; font-weight: 600; line-height: 1.6; }
+        p { margin: 0 0 12px; }
+        .indented { text-indent: 2em; margin: 0; color: #c7d3cd; }
+        .entry { border-left: 2px solid #5f9b78; padding-left: 20px; }
+        .entry + .entry { margin-top: 24px; }
+        .entry p { margin: 0; color: var(--muted); font-size: 14px; }
+        .entry .period { color: var(--accent); font-size: 12px; margin-top: 6px; }
+        .columns { display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; }
+        .details { padding-left: 20px; margin: 0; color: #c7d3cd; }
+        .details li { padding-left: 4px; margin-bottom: 9px; }
+        .details li::marker { color: var(--accent); }
+        #contato { border-bottom: 0; padding-bottom: 40px; }
+        address { font-style: normal; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .contact-item { border: 1px solid var(--line); background: #14201c; border-radius: 6px; padding: 18px 20px; }
+        .contact-item span { display: block; color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+        .contact-item a { overflow-wrap: anywhere; font-size: 14px; }
+        .address { margin: 20px 0 0; color: var(--muted); font-size: 13px; }
+        footer { display: flex; justify-content: space-between; gap: 16px; padding: 18px 48px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); }
+        footer p { margin: 0; }
+        @media (max-width: 700px) {
+            .terminal { width: calc(100% - 24px); margin: 12px auto; }
+            .hero { padding: 28px 24px; }
+            main { padding: 0 24px; }
+            .hero-content { flex-direction: column; align-items: flex-start; gap: 24px; }
+            .portrait { width: 192px; height: 232px; max-width: 100%; align-self: center; }
+            .columns, .contact-grid { grid-template-columns: 1fr; }
+            .file-type { display: none; }
+            footer { padding: 18px 24px; flex-wrap: wrap; }
+            h2 { font-size: 18px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+        }
+        @media print {
+            :root { color-scheme: light; }
+            body { background: #fff; color: #111; font-size: 10pt; }
+            .terminal { width: 100%; margin: 0; border: 0; box-shadow: none; background: #fff; }
+            .window-bar, nav, .skip-link, footer, .command { display: none; }
+            .hero { padding: 0 0 20px; background: none; }
+            main { padding: 0; }
+            section { padding: 16px 0; break-inside: avoid; }
+            h1 { font-size: 28pt; }
+            h2 { margin-bottom: 12px; font-size: 14pt; }
+            .hero p, .entry p, .indented, .details, .address, .contact-item span, .entry .period, a { color: #222; }
+            .contact-item { background: none; }
+            .columns { gap: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="terminal" id="inicio">
+        <div class="window-bar" aria-hidden="true">
+            <div class="window-dots"><span></span><span></span><span></span></div>
+            <span>newton / currículo</span>
+            <span class="file-type">perfil profissional</span>
+        </div>
+
+        <header class="hero">
+            <p class="eyebrow">Currículo profissional</p>
+            <div class="hero-content">
+                <div>
+                    <h1>Newton Pinto Filho</h1>
+                    <p class="subtitle">Auxiliar Técnico Administrativo</p>
+                    <p class="location">Grupiara, MG · 19 anos · Solteiro</p>
+                </div>
+                <img class="portrait" src="805d115a-20ee-465e-b81c-53d9bd28b8be.jpg" alt="Foto de Newton Pinto Filho" width="224" height="272">
+            </div>
+            <nav aria-label="Seções do currículo">
+                <ul>
+                    <li><a href="#objetivo">~/objetivo</a></li>
+                    <li><a href="#experiencia">~/experiência</a></li>
+                    <li><a href="#formacao">~/formação</a></li>
+                    <li><a href="#habilidades">~/habilidades</a></li>
+                    <li><a class="contact-link" href="#contato">~/contato ↗</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="conteudo">
+            <section id="objetivo" aria-labelledby="titulo-objetivo">
+                <p class="command" aria-hidden="true">$ cat objetivo.txt</p>
+                <h2 id="titulo-objetivo">Objetivo profissional</h2>
+                <p class="indented">Busco oportunidade profissional para aplicar e ampliar meus conhecimentos, contribuindo com dedicação, responsabilidade e experiência na área administrativa, além de disposição para aprender e desenvolver novas habilidades.</p>
+            </section>
+
+            <section id="experiencia" aria-labelledby="titulo-experiencia">
+                <p class="command" aria-hidden="true">$ ls experiência/</p>
+                <h2 id="titulo-experiencia">Experiência profissional</h2>
+                <article class="entry">
+                    <h3>Auxiliar Técnico Administrativo</h3>
+                    <p>1 ano e 7 meses de experiência</p>
+                </article>
+            </section>
+
+            <section id="formacao" aria-labelledby="titulo-formacao">
+                <p class="command" aria-hidden="true">$ ls formação/</p>
+                <h2 id="titulo-formacao">Formação acadêmica</h2>
+                <article class="entry">
+                    <h3>Análise e Desenvolvimento de Sistemas</h3>
+                    <p>IMEPAC · Araguari, MG</p>
+                    <p class="period">Cursando · Previsão de conclusão: <time datetime="2027">2027</time></p>
+                </article>
+                <article class="entry">
+                    <h3>Ensino Médio</h3>
+                    <p>Escola Estadual José Faleiros de Aguiar · Grupiara, MG</p>
+                    <p class="period">Conclusão: <time datetime="2024">2024</time></p>
+                </article>
+            </section>
+
+            <div class="columns">
+                <section id="habilidades" aria-labelledby="titulo-habilidades">
+                    <p class="command" aria-hidden="true">$ cat habilidades.txt</p>
+                    <h2 id="titulo-habilidades">Habilidades</h2>
+                    <ul class="details">
+                        <li>Conhecimentos básicos em <strong>Pacote Office</strong> (Word e Excel)</li>
+                        <li>Noções de <strong>Banco de Dados</strong></li>
+                        <li>Digitação rápida e precisa</li>
+                        <li>Facilidade de aprendizado e adaptação</li>
+                    </ul>
+                </section>
+                <section aria-labelledby="titulo-qualidades">
+                    <p class="command" aria-hidden="true">$ cat qualidades.txt</p>
+                    <h2 id="titulo-qualidades">Qualidades pessoais</h2>
+                    <ul class="details">
+                        <li>Disposição para aprender</li>
+                        <li>Boa comunicação e educação no atendimento</li>
+                        <li>Trabalho em equipe e proatividade</li>
+                        <li>Disponibilidade para mudança de cidade</li>
+                    </ul>
+                </section>
+            </div>
+
+            <section aria-labelledby="titulo-adicionais">
+                <p class="command" aria-hidden="true">$ cat informações.txt</p>
+                <h2 id="titulo-adicionais">Informações adicionais</h2>
+                <ul class="details">
+                    <li>Disponível para início imediato</li>
+                    <li>Interesse em áreas administrativas, tecnológicas ou operacionais</li>
+                </ul>
+            </section>
+
+            <section id="contato" aria-labelledby="titulo-contato">
+                <p class="command" aria-hidden="true">$ cd contato/</p>
+                <h2 id="titulo-contato">Contato</h2>
+                <address>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <span>E-mail</span>
+                            <a href="mailto:newtonfilho1310@gmail.com">newtonfilho1310@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <span>Telefone</span>
+                            <a href="tel:+5534988103479">(34) 98810-3479</a>
+                        </div>
+                    </div>
+                    <p class="address">Rua Lourenço Antônio Pinheiro, 21 · Grupiara, MG<br>CEP 38470-000</p>
+                </address>
+            </section>
+        </main>
+
+        <footer>
+            <p>Newton Pinto Filho · Currículo</p>
+            <a href="#inicio">Voltar ao início ↑</a>
+        </footer>
+    </div>
+</body>
+</html>
